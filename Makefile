@@ -55,3 +55,6 @@ queue-failed-clear:
 
 stats-model:
 	php artisan model-stats:publish
+
+start-app:
+	php artisan serve
