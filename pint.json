@@ -1,0 +1,11 @@
+{
+    "preset": "laravel",
+    "exclude": [
+        "database",
+        "app/Providers",
+        "resources/lang"
+    ],
+    "notPath": [
+        "config/backup.php"
+    ]
+}
