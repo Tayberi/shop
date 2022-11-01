@@ -4,6 +4,9 @@ console:
 install-app:
 	composer install
 
+install-shop:
+	php artisan shop:install
+
 test:
 	php artisan test
 
@@ -39,7 +42,7 @@ supervisor-start:
 	sudo supervisorctl start laravel-worker-vks:*
 
 lint-php:
-	./vendor/bin/phpcs --standard=PSR12 app/Jobs/Event/DeleteEventJob.php
+	./vendor/bin/phpcs --standard=PSR12 app/Logging/Telegram/TelegramLoggerHandler.php
 
 lint-pint:
 	./vendor/bin/pint --test -v
@@ -57,4 +60,4 @@ stats-model:
 	php artisan model-stats:publish
 
 start-app:
-	php artisan serve
+	php artisan serve --host 127.0.0.1 --port 9000
