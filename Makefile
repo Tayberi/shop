@@ -60,4 +60,4 @@ stats-model:
 	php artisan model-stats:publish
 
 start-app:
-	php artisan serve --host 127.0.0.1 --port 9000
+	php artisan serve

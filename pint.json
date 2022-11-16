@@ -1,11 +1,12 @@
 {
-    "preset": "laravel",
+    "preset": "psr12",
     "exclude": [
         "database",
         "app/Providers",
         "resources/lang"
     ],
     "notPath": [
-        "config/backup.php"
+        "config/backup.php",
+        "app/Notifications/NewUserNotification.php"
     ]
 }

@@ -12,14 +12,14 @@ class AppServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        Model::shouldBeStrict(!app()->isProduction());
+        Model::shouldBeStrict(! app()->isProduction());
 
         if (app()->isProduction()) {
             DB::listen(static function ($query) {
                 if ($query->time > 100) {
                     logger()
                         ->channel('telegram')
-                        ->debug('query longer than 1ms:' . $query->sql, $query->bindings);
+                        ->debug('query longer than 1ms:'.$query->sql, $query->bindings);
                 }
             });
 
@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
                 function () {
                     logger()
                         ->channel('telegram')
-                        ->debug('whenRequestLifecycleIsLongerThan:' . request()->url());
+                        ->debug('whenRequestLifecycleIsLongerThan:'.request()->url());
                 }
             );
         }
