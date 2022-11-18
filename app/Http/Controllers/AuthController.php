@@ -58,7 +58,8 @@ class AuthController extends Controller
 
         auth()->login($user);
 
-        return redirect()->intended(route('home'));
+        return redirect()
+            ->intended(route('home'));
     }
 
     public function logOut(): RedirectResponse

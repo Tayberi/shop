@@ -4,9 +4,12 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Password;
+use Worksome\RequestFactories\Concerns\HasFactory;
 
 class SignUpFormRequest extends FormRequest
 {
+    use HasFactory;
+
     public function authorize(): bool
     {
         return auth()->guest();
@@ -20,7 +23,7 @@ class SignUpFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'min:3'],
+            'name' => ['required', 'string', 'min:1'],
             'email' => ['required', 'email:dns', 'unique:users'],
             'password' => ['required', 'confirmed', Password::defaults()],
         ];
