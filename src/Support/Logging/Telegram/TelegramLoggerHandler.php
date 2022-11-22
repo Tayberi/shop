@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Support\Logging\Telegram;
 
-use App\Services\Telegram\TelegramBotApi;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Logger;
+use Services\Telegram\TelegramBotApi;
 
 final class TelegramLoggerHandler extends AbstractProcessingHandler
 {

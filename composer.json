@@ -37,8 +37,8 @@
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
             "Domain\\": "src/Domain/",
-            "Services\\": "src/Domain/",
-            "Support\\": "src/Support"
+            "Services\\": "src/Services/",
+            "Support\\": "src/Support/"
         },
         "files": [
             "src/Support/helpers.php"
