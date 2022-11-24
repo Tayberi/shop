@@ -44,7 +44,7 @@ supervisor-start:
 lint-php:
 	./vendor/bin/phpcs --standard=PSR12 app/Logging/Telegram/TelegramLoggerHandler.php
 
-lint-pint:
+pint-linter:
 	./vendor/bin/pint --test -v
 
 queue-restart:
@@ -61,3 +61,9 @@ stats-model:
 
 start-app:
 	php artisan serve
+
+refresh:
+	php artisan shop:refresh
+
+link:
+	 php artisan storage:link
