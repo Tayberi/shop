@@ -67,3 +67,9 @@ refresh:
 
 link:
 	 php artisan storage:link
+
+vite:
+	 npx vite dev
+
+vite-build:
+	 npx vite build
