@@ -26,6 +26,9 @@ class CatalogController extends Controller
 
         $products = Product::query()
             ->select(['id', 'title', 'slug', 'price', 'thumbnail'])
+            ->when(request('s'), function (Builder $query) {
+                $query->whereFullText(['title', 'text'], request('s'));
+            })
             ->when($category->exists, function (Builder $query) use ($category) {
                 $query->whereRelation(
                     'categories',
@@ -37,7 +40,8 @@ class CatalogController extends Controller
             ->filtered()
             ->sorted()
             ->paginate(9);
-//        dd($category);
+
+
 
         return view('catalog.index', [
             'products' => $products,
