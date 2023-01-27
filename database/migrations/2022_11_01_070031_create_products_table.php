@@ -13,14 +13,18 @@ return new class extends Migration {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('slug')->unique();
-            $table->string('thumbnail')->nullable();
-            $table->unsignedInteger('price')->default(0);
+            $table->string('slug')
+                ->unique();
+            $table->string('thumbnail')
+                ->nullable();
+            $table->unsignedInteger('price')
+                ->default(0);
 
             $table->foreignIdFor(Brand::class)
                 ->nullable()
                 ->constrained()
                 ->cascadeOnUpdate()
+                //TODO https://store.cutcode.ru/course/79 18 минута
                 ->nullOnDelete();
 
             $table->timestamps();

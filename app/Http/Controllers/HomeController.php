@@ -16,17 +16,20 @@ class HomeController extends Controller
         $categories = CategoryViewModel::make()
             ->homePage();
 
-        $brands = BrandViewModel::make()
-            ->homePage();
-
         $products = Product::query()
             ->homePage()
             ->get();
 
-        return view('index', compact(
-            'categories',
-            'products',
-            'brands'
-        ));
+        $brands = BrandViewModel::make()
+            ->homePage();
+
+        return view(
+            'index',
+            compact(
+                'categories',
+                'products',
+                'brands'
+            )
+        );
     }
 }

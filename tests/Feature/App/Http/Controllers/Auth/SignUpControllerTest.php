@@ -18,6 +18,7 @@ use Tests\TestCase;
 class SignUpControllerTest extends TestCase
 {
     use RefreshDatabase;
+
     protected array $request;
 
 
