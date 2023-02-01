@@ -60,7 +60,7 @@ stats-model:
 	php artisan model-stats:publish
 
 start-app:
-	php artisan serve
+	php artisan serve --host=10.14.46.103
 
 refresh:
 	php artisan shop:refresh
