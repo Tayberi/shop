@@ -34,7 +34,6 @@ abstract class AbstractFilter implements Stringable
 
     public function name(string $index = null): string
     {
-        // name ="filters[key]?[index]"
         return str($this->key())
             ->wrap('[', ']')
             ->prepend('filters')
@@ -55,5 +54,4 @@ abstract class AbstractFilter implements Stringable
             'filter' => $this
         ])->render();
     }
-//    @include($filter->view(), ['filter' => $filter])
 }
