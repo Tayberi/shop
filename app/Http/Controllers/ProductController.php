@@ -29,7 +29,7 @@ class ProductController extends Controller
         return view('product.show', [
             'product' => $product,
             'options' => $options,
-            'also' => $also
+            'also' => $also ?? []
         ]);
     }
 }
